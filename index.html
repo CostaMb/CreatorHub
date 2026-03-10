@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Creator Hub - Creștere & Postări Zilnice</title>
+    <title>Creator Hub Premium - 4 Platforme, 1 Soluție</title>
     <style>
         * {
             margin: 0;
@@ -12,23 +12,32 @@
         }
         
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: #f8fafc;
-            color: #333;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #0f0f1a;
+            color: #fff;
+        }
+        
+        /* Premium Gradient Effects */
+        .premium-gradient {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #ff6b6b 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
         
         /* Navigation */
         nav {
-            background: white;
+            background: rgba(15, 15, 26, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255,255,255,0.1);
             padding: 1rem 2rem;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
             position: sticky;
             top: 0;
-            z-index: 100;
+            z-index: 1000;
         }
         
         .nav-container {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
             display: flex;
             justify-content: space-between;
@@ -36,348 +45,559 @@
         }
         
         .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
-            background: linear-gradient(135deg, #2563eb, #7c3aed);
+            font-size: 1.8rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #fff 0%, #a5b4fc 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
         
+        .logo span {
+            background: linear-gradient(135deg, #ff6b6b, #fbbf24);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: 1rem;
+            vertical-align: super;
+        }
+        
         .nav-links {
             display: flex;
-            gap: 2rem;
+            gap: 2.5rem;
+            align-items: center;
         }
         
         .nav-links a {
+            color: #94a3b8;
             text-decoration: none;
-            color: #666;
             font-weight: 500;
             transition: color 0.3s;
+            font-size: 1rem;
         }
         
         .nav-links a:hover {
-            color: #2563eb;
+            color: white;
+        }
+        
+        .premium-badge {
+            background: linear-gradient(135deg, #fbbf24, #ff6b6b);
+            color: black;
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
         
         /* Hero Section */
         .hero {
-            background: linear-gradient(135deg, #2563eb 0%, #7c3aed 100%);
-            color: white;
-            padding: 4rem 2rem;
+            background: radial-gradient(circle at top right, #2d1b4e, #0f0f1a);
+            padding: 6rem 2rem;
             text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, rgba(102,126,234,0.2) 0%, transparent 70%);
+            border-radius: 50%;
         }
         
         .hero h1 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
+            font-size: 4rem;
+            max-width: 900px;
+            margin: 0 auto 1.5rem;
+            line-height: 1.2;
+            position: relative;
+        }
+        
+        .hero h1 span {
+            background: linear-gradient(135deg, #667eea, #ff6b6b);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
         
         .hero p {
-            font-size: 1.2rem;
-            opacity: 0.95;
+            font-size: 1.3rem;
+            color: #94a3b8;
             max-width: 600px;
-            margin: 0 auto 2rem;
+            margin: 0 auto 3rem;
+            position: relative;
         }
         
-        .hero-stats {
+        .platform-badges {
             display: flex;
             justify-content: center;
-            gap: 3rem;
-            margin-top: 3rem;
+            gap: 2rem;
+            margin: 3rem 0;
+            position: relative;
         }
         
-        .stat {
+        .platform-badge {
+            width: 80px;
+            height: 80px;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            transition: all 0.3s;
+        }
+        
+        .platform-badge:hover {
+            transform: translateY(-10px);
+            border-color: #667eea;
+            box-shadow: 0 10px 30px rgba(102,126,234,0.3);
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            text-decoration: none;
+            padding: 1.2rem 3rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.2rem;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: none;
+            cursor: pointer;
+            position: relative;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 20px 30px rgba(102,126,234,0.4);
+        }
+        
+        /* Premium Stats */
+        .stats-section {
+            max-width: 1200px;
+            margin: -3rem auto 4rem;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            padding: 0 2rem;
+            position: relative;
+            z-index: 10;
+        }
+        
+        .stat-card {
+            background: rgba(255,255,255,0.03);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.05);
+            border-radius: 20px;
+            padding: 2rem;
             text-align: center;
         }
         
-        .stat-number {
+        .stat-card h3 {
             font-size: 2.5rem;
-            font-weight: bold;
-            display: block;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, #fff, #a5b4fc);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
         
-        .stat-label {
+        .stat-card p {
+            color: #94a3b8;
             font-size: 1rem;
-            opacity: 0.9;
         }
         
-        /* Main Content */
+        /* Main Container */
         .container {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
             padding: 4rem 2rem;
         }
         
         .section-title {
             text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
-            color: #1e293b;
+            font-size: 3rem;
+            margin-bottom: 4rem;
         }
         
         .section-title span {
-            background: linear-gradient(135deg, #2563eb, #7c3aed);
+            background: linear-gradient(135deg, #667eea, #ff6b6b);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
         
-        /* Daily Posting Tools */
-        .daily-tools {
-            background: white;
-            border-radius: 20px;
-            padding: 3rem;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            margin-bottom: 4rem;
+        /* Platform Tabs */
+        .platform-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 3rem;
         }
         
+        .tab {
+            padding: 1rem 2.5rem;
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.05);
+            border-radius: 50px;
+            color: #94a3b8;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: 600;
+        }
+        
+        .tab:hover {
+            background: rgba(102,126,234,0.1);
+            border-color: #667eea;
+            color: white;
+        }
+        
+        .tab.active {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border: none;
+        }
+        
+        /* Tools Grid Premium */
         .tools-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
             gap: 2rem;
-            margin-top: 2rem;
+            margin-top: 3rem;
         }
         
         .tool-card {
-            background: #f8fafc;
-            border-radius: 15px;
-            padding: 2rem;
-            transition: transform 0.3s;
-            border: 1px solid #e2e8f0;
+            background: rgba(255,255,255,0.02);
+            border: 1px solid rgba(255,255,255,0.05);
+            border-radius: 30px;
+            padding: 2.5rem;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .tool-card::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(135deg, #667eea, transparent, #ff6b6b);
+            border-radius: 30px;
+            opacity: 0;
+            transition: opacity 0.3s;
+            z-index: -1;
+        }
+        
+        .tool-card:hover::before {
+            opacity: 0.3;
         }
         
         .tool-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(37,99,235,0.1);
+            background: rgba(255,255,255,0.03);
         }
         
-        .tool-icon {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
-        
-        .tool-card h3 {
-            font-size: 1.3rem;
-            margin-bottom: 0.5rem;
-            color: #1e293b;
-        }
-        
-        .tool-card p {
-            color: #64748b;
-            margin-bottom: 1rem;
-            font-size: 0.95rem;
-        }
-        
-        .tool-meta {
+        .tool-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-top: 1rem;
+            margin-bottom: 1.5rem;
         }
         
-        .tool-type {
-            background: #e2e8f0;
-            padding: 0.3rem 1rem;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            color: #475569;
+        .tool-icon {
+            font-size: 3rem;
         }
         
-        .tool-link {
-            color: #2563eb;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.9rem;
-        }
-        
-        /* Growth Tools */
-        .growth-tools {
-            background: linear-gradient(135deg, #2563eb 0%, #7c3aed 100%);
-            border-radius: 20px;
-            padding: 3rem;
-            color: white;
-            margin-bottom: 4rem;
-        }
-        
-        .growth-tools .section-title {
-            color: white;
-        }
-        
-        .growth-tools .section-title span {
-            -webkit-text-fill-color: white;
-        }
-        
-        .growth-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-        }
-        
-        .growth-card {
-            background: rgba(255,255,255,0.1);
-            backdrop-filter: blur(10px);
-            border-radius: 15px;
-            padding: 2rem;
-            border: 1px solid rgba(255,255,255,0.2);
-        }
-        
-        .growth-card h3 {
-            font-size: 1.3rem;
-            margin-bottom: 1rem;
-            color: white;
-        }
-        
-        .growth-card p {
-            color: rgba(255,255,255,0.9);
-            margin-bottom: 1rem;
-            font-size: 0.95rem;
-        }
-        
-        .growth-stats {
+        .tool-platform {
             display: flex;
-            gap: 1rem;
-            margin: 1rem 0;
-            font-size: 0.9rem;
-            color: rgba(255,255,255,0.8);
-        }
-        
-        /* Platform Stats */
-        .platform-stats {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1.5rem;
-            margin: 3rem 0;
-        }
-        
-        .platform-card {
-            background: white;
-            border-radius: 10px;
-            padding: 1.5rem;
-            text-align: center;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-            border: 1px solid #e2e8f0;
+            gap: 0.5rem;
         }
         
         .platform-icon {
-            font-size: 2rem;
-            margin-bottom: 0.5rem;
-        }
-        
-        .platform-name {
-            font-weight: 600;
-            color: #1e293b;
-        }
-        
-        .platform-value {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: #2563eb;
-            margin: 0.5rem 0;
-        }
-        
-        /* Daily Checklist */
-        .checklist {
-            background: white;
-            border-radius: 20px;
-            padding: 3rem;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            margin-bottom: 4rem;
-        }
-        
-        .checklist-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-        
-        .checklist-item {
-            display: flex;
-            align-items: start;
-            gap: 1rem;
-            padding: 1rem;
-            background: #f8fafc;
-            border-radius: 10px;
-        }
-        
-        .checklist-check {
-            background: #22c55e;
-            color: white;
-            width: 24px;
-            height: 24px;
-            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 8px;
             display: flex;
             align-items: center;
             justify-content: center;
+            font-size: 1rem;
+        }
+        
+        .tool-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #fff, #a5b4fc);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .tool-description {
+            color: #94a3b8;
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+        }
+        
+        .tool-features {
+            list-style: none;
+            margin-bottom: 2rem;
+        }
+        
+        .tool-features li {
+            color: #cbd5e1;
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .tool-features li::before {
+            content: '✓';
+            color: #22c55e;
             font-weight: bold;
         }
         
-        .checklist-content h4 {
-            color: #1e293b;
-            margin-bottom: 0.3rem;
+        .tool-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
         
-        .checklist-content p {
-            color: #64748b;
-            font-size: 0.9rem;
-        }
-        
-        /* CTA Section */
-        .cta {
-            background: #1e293b;
-            color: white;
-            text-align: center;
-            padding: 4rem 2rem;
-            border-radius: 20px;
-        }
-        
-        .cta h2 {
+        .tool-price {
             font-size: 2rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #fbbf24, #ff6b6b);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .tool-price span {
+            font-size: 1rem;
+            color: #94a3b8;
+            background: none;
+            -webkit-text-fill-color: #94a3b8;
+        }
+        
+        .tool-link {
+            color: white;
+            text-decoration: none;
+            padding: 0.8rem 2rem;
+            background: rgba(255,255,255,0.05);
+            border-radius: 50px;
+            transition: all 0.3s;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .tool-link:hover {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border-color: transparent;
+        }
+        
+        /* Premium Features */
+        .premium-features {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin: 6rem 0;
+        }
+        
+        .feature {
+            text-align: center;
+            padding: 2rem;
+            background: rgba(255,255,255,0.02);
+            border-radius: 20px;
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+        
+        .feature-icon {
+            font-size: 3rem;
             margin-bottom: 1rem;
         }
         
-        .cta p {
-            margin-bottom: 2rem;
-            opacity: 0.9;
+        .feature h4 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            color: white;
         }
         
-        .cta-button {
+        .feature p {
+            color: #94a3b8;
+        }
+        
+        /* Pricing Section */
+        .pricing {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin: 4rem 0;
+        }
+        
+        .pricing-card {
+            background: rgba(255,255,255,0.02);
+            border: 1px solid rgba(255,255,255,0.05);
+            border-radius: 30px;
+            padding: 3rem;
+            text-align: center;
+            position: relative;
+        }
+        
+        .pricing-card.popular {
+            background: linear-gradient(135deg, rgba(102,126,234,0.1), rgba(255,107,107,0.1));
+            border-color: #667eea;
+        }
+        
+        .popular-badge {
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(135deg, #fbbf24, #ff6b6b);
+            color: black;
+            padding: 0.5rem 2rem;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+        }
+        
+        .pricing-card h3 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: white;
+        }
+        
+        .pricing-price {
+            font-size: 4rem;
+            font-weight: 800;
+            margin: 2rem 0;
+            background: linear-gradient(135deg, #fff, #a5b4fc);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .pricing-price span {
+            font-size: 1rem;
+            color: #94a3b8;
+            -webkit-text-fill-color: #94a3b8;
+        }
+        
+        .pricing-features {
+            list-style: none;
+            margin: 2rem 0;
+        }
+        
+        .pricing-features li {
+            color: #cbd5e1;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+        
+        .pricing-button {
             display: inline-block;
-            background: linear-gradient(135deg, #2563eb, #7c3aed);
+            background: linear-gradient(135deg, #667eea, #764ba2);
             color: white;
             text-decoration: none;
             padding: 1rem 3rem;
             border-radius: 50px;
             font-weight: 600;
-            font-size: 1.2rem;
             transition: transform 0.3s;
+            width: 100%;
         }
         
-        .cta-button:hover {
+        .pricing-button:hover {
             transform: scale(1.05);
         }
         
-        /* Footer */
-        footer {
-            background: #1e293b;
+        /* Newsletter Premium */
+        .newsletter {
+            background: linear-gradient(135deg, #1a1a2e, #16213e);
+            border-radius: 30px;
+            padding: 4rem;
+            text-align: center;
+            margin: 4rem 0;
+        }
+        
+        .newsletter h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .newsletter p {
+            color: #94a3b8;
+            margin-bottom: 2rem;
+        }
+        
+        .newsletter-form {
+            max-width: 500px;
+            margin: 0 auto;
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .newsletter-form input {
+            flex: 1;
+            padding: 1rem 1.5rem;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 50px;
             color: white;
+            font-size: 1rem;
+        }
+        
+        .newsletter-form input:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+        
+        .newsletter-form button {
+            padding: 1rem 2rem;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border: none;
+            border-radius: 50px;
+            color: white;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+        
+        .newsletter-form button:hover {
+            transform: scale(1.05);
+        }
+        
+        /* Footer Premium */
+        footer {
+            background: #0a0a0f;
+            border-top: 1px solid rgba(255,255,255,0.05);
             padding: 4rem 2rem 2rem;
             margin-top: 4rem;
         }
         
         .footer-content {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 3rem;
+            grid-template-columns: 2fr repeat(3, 1fr);
+            gap: 4rem;
         }
         
         .footer-section h4 {
+            color: white;
             margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+        
+        .footer-section p {
             color: #94a3b8;
+            line-height: 1.7;
         }
         
         .footer-section ul {
@@ -389,7 +609,7 @@
         }
         
         .footer-section ul li a {
-            color: #cbd5e1;
+            color: #94a3b8;
             text-decoration: none;
             transition: color 0.3s;
         }
@@ -399,11 +619,27 @@
         }
         
         .footer-bottom {
+            max-width: 1400px;
+            margin: 3rem auto 0;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.05);
             text-align: center;
-            padding-top: 3rem;
-            margin-top: 3rem;
-            border-top: 1px solid #334155;
-            color: #94a3b8;
+            color: #62748c;
+        }
+        
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .footer-content {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .premium-features {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .pricing {
+                grid-template-columns: 1fr;
+            }
         }
         
         @media (max-width: 768px) {
@@ -412,17 +648,33 @@
                 gap: 1rem;
             }
             
+            .nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
             .hero h1 {
-                font-size: 2rem;
+                font-size: 2.5rem;
             }
             
-            .hero-stats {
+            .stats-section {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .platform-tabs {
+                flex-wrap: wrap;
+            }
+            
+            .premium-features {
+                grid-template-columns: 1fr;
+            }
+            
+            .newsletter-form {
                 flex-direction: column;
-                gap: 1rem;
             }
             
-            .section-title {
-                font-size: 2rem;
+            .footer-content {
+                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -430,283 +682,303 @@
 <body>
     <nav>
         <div class="nav-container">
-            <div class="logo">📈 Creator Hub Growth</div>
+            <div class="logo">CREATOR HUB <span>PREMIUM</span></div>
             <div class="nav-links">
-                <a href="#daily">Postări Zilnice</a>
-                <a href="#growth">Creștere</a>
+                <a href="#facebook">Facebook</a>
+                <a href="#youtube">YouTube</a>
+                <a href="#instagram">Instagram</a>
+                <a href="#tiktok">TikTok</a>
                 <a href="#tools">Tool-uri</a>
-                <a href="#checklist">Checklist</a>
+                <a href="#pricing">Prețuri</a>
+                <div class="premium-badge">BETA TESTER</div>
             </div>
         </div>
     </nav>
 
     <section class="hero">
-        <h1>Crește-ți comunitatea +1000 urmăritori/lună</h1>
-        <p>Tool-uri specializate pentru postări zilnice și creștere organică pe toate platformele</p>
-        <div class="hero-stats">
-            <div class="stat">
-                <span class="stat-number">+10k</span>
-                <span class="stat-label">Creatori ajutați</span>
-            </div>
-            <div class="stat">
-                <span class="stat-number">50+</span>
-                <span class="stat-label">Tool-uri testate</span>
-            </div>
-            <div class="stat">
-                <span class="stat-number">30%</span>
-                <span class="stat-label">Creștere medie</span>
-            </div>
+        <h1>Dominați <span>4 platforme</span><br>cu un singur tool premium</h1>
+        <p>Facebook, YouTube, Instagram & TikTok - Toate instrumentele de care ai nevoie într-un loc</p>
+        
+        <div class="platform-badges">
+            <div class="platform-badge">📘</div>
+            <div class="platform-badge">📺</div>
+            <div class="platform-badge">📷</div>
+            <div class="platform-badge">🎵</div>
         </div>
+        
+        <a href="#" class="cta-button">Începe perioada premium gratuit →</a>
     </section>
 
+    <div class="stats-section">
+        <div class="stat-card">
+            <h3>50k+</h3>
+            <p>Creatori activi</p>
+        </div>
+        <div class="stat-card">
+            <h3>4</h3>
+            <p>Platforme suportate</p>
+        </div>
+        <div class="stat-card">
+            <h3>150+</h3>
+            <p>Tool-uri premium</p>
+        </div>
+        <div class="stat-card">
+            <h3>+250%</h3>
+            <p>Creștere medie</p>
+        </div>
+    </div>
+
     <div class="container">
-        <!-- Platform Stats -->
-        <div class="platform-stats">
-            <div class="platform-card">
-                <div class="platform-icon">📱</div>
-                <div class="platform-name">TikTok</div>
-                <div class="platform-value">+500/zi</div>
-                <div>Creștere medie</div>
+        <h2 class="section-title">Tool-uri <span>Premium</span> pe Platforme</h2>
+        
+        <div class="platform-tabs">
+            <div class="tab active">📘 Facebook</div>
+            <div class="tab">📺 YouTube</div>
+            <div class="tab">📷 Instagram</div>
+            <div class="tab">🎵 TikTok</div>
+            <div class="tab">🌟 Toate</div>
+        </div>
+
+        <div class="tools-grid">
+            <!-- Facebook Tools -->
+            <div class="tool-card">
+                <div class="tool-header">
+                    <div class="tool-icon">📘</div>
+                    <div class="tool-platform">
+                        <span class="platform-icon">📘</span>
+                        <span class="platform-icon">📺</span>
+                    </div>
+                </div>
+                <h3>Meta Business Suite Pro</h3>
+                <p class="tool-description">Gestionare completă pentru Facebook și Instagram cu analytics în timp real și programare inteligentă.</p>
+                <ul class="tool-features">
+                    <li>Programare postări automate</li>
+                    <li>Analytics predictiv</li>
+                    <li>Optimizare audience</li>
+                    <li>A/B testing nelimitat</li>
+                </ul>
+                <div class="tool-footer">
+                    <div class="tool-price">$49 <span>/lună</span></div>
+                    <a href="#" class="tool-link">Vezi tool</a>
+                </div>
             </div>
-            <div class="platform-card">
-                <div class="platform-icon">📺</div>
-                <div class="platform-name">YouTube</div>
-                <div class="platform-value">+200/zi</div>
-                <div>Creștere medie</div>
+
+            <!-- YouTube Tools -->
+            <div class="tool-card">
+                <div class="tool-header">
+                    <div class="tool-icon">📺</div>
+                    <div class="tool-platform">
+                        <span class="platform-icon">📺</span>
+                        <span class="platform-icon">🎵</span>
+                    </div>
+                </div>
+                <h3>TubeMaster 360</h3>
+                <p class="tool-description">Optimizare completă YouTube + TikTok. Descoperă trenduri înainte să devină virale.</p>
+                <ul class="tool-features">
+                    <li>Keyword research avansat</li>
+                    <li>Analiză competitori</li>
+                    <li>Optimizare thumbnail AI</li>
+                    <li>Predicții virale</li>
+                </ul>
+                <div class="tool-footer">
+                    <div class="tool-price">$79 <span>/lună</span></div>
+                    <a href="#" class="tool-link">Vezi tool</a>
+                </div>
             </div>
-            <div class="platform-card">
-                <div class="platform-icon">📸</div>
-                <div class="platform-name">Instagram</div>
-                <div class="platform-value">+300/zi</div>
-                <div>Creștere medie</div>
+
+            <!-- Instagram Tools -->
+            <div class="tool-card">
+                <div class="tool-header">
+                    <div class="tool-icon">📷</div>
+                    <div class="tool-platform">
+                        <span class="platform-icon">📷</span>
+                        <span class="platform-icon">📘</span>
+                    </div>
+                </div>
+                <h3>InstaGrowth AI</h3>
+                <p class="tool-description">Creștere organică pentru Instagram cu AI care învață audience-ul tău.</p>
+                <ul class="tool-features">
+                    <li>Hashtag generator AI</li>
+                    <li>Best time to post</li>
+                    <li>Story templates interactive</li>
+                    <li>Engagement automation</li>
+                </ul>
+                <div class="tool-footer">
+                    <div class="tool-price">$59 <span>/lună</span></div>
+                    <a href="#" class="tool-link">Vezi tool</a>
+                </div>
             </div>
-            <div class="platform-card">
-                <div class="platform-icon">🎵</div>
-                <div class="platform-name">Reels</div>
-                <div class="platform-value">+400/zi</div>
-                <div>Creștere medie</div>
+
+            <!-- TikTok Tools -->
+            <div class="tool-card">
+                <div class="tool-header">
+                    <div class="tool-icon">🎵</div>
+                    <div class="tool-platform">
+                        <span class="platform-icon">🎵</span>
+                        <span class="platform-icon">📺</span>
+                    </div>
+                </div>
+                <h3>TikTok Viral Kit</h3>
+                <p class="tool-description">Tool-ul #1 pentru creștere pe TikTok. Folosit de top creatori.</p>
+                <ul class="tool-features">
+                    <li>Trend detection în timp real</li>
+                    <li>Sound analytics</li>
+                    <li>Video templates virale</li>
+                    <li>Hashtag strategies</li>
+                </ul>
+                <div class="tool-footer">
+                    <div class="tool-price">$69 <span>/lună</span></div>
+                    <a href="#" class="tool-link">Vezi tool</a>
+                </div>
+            </div>
+
+            <!-- Cross-Platform Tool -->
+            <div class="tool-card">
+                <div class="tool-header">
+                    <div class="tool-icon">🚀</div>
+                    <div class="tool-platform">
+                        <span class="platform-icon">📘</span>
+                        <span class="platform-icon">📺</span>
+                        <span class="platform-icon">📷</span>
+                        <span class="platform-icon">🎵</span>
+                    </div>
+                </div>
+                <h3>Creator Hub AI</h3>
+                <p class="tool-description">Asistentul AI care gestionează toate cele 4 platforme simultan.</p>
+                <ul class="tool-features">
+                    <li>Cross-platform scheduling</li>
+                    <li>Unified analytics</li>
+                    <li>Content repurposing AI</li>
+                    <li>Performance predictions</li>
+                </ul>
+                <div class="tool-footer">
+                    <div class="tool-price">$149 <span>/lună</span></div>
+                    <a href="#" class="tool-link">Vezi tool</a>
+                </div>
+            </div>
+
+            <!-- Analytics Tool -->
+            <div class="tool-card">
+                <div class="tool-header">
+                    <div class="tool-icon">📊</div>
+                    <div class="tool-platform">
+                        <span class="platform-icon">📘</span>
+                        <span class="platform-icon">📺</span>
+                        <span class="platform-icon">📷</span>
+                        <span class="platform-icon">🎵</span>
+                    </div>
+                </div>
+                <h3>Analytics Hub Pro</h3>
+                <p class="tool-description">Centralizează toate statisticile și primești recomandări personalizate.</p>
+                <ul class="tool-features">
+                    <li>Unified dashboard</li>
+                    <li>Competitor tracking</li>
+                    <li>ROI calculator</li>
+                    <li>Weekly growth reports</li>
+                </ul>
+                <div class="tool-footer">
+                    <div class="tool-price">$89 <span>/lună</span></div>
+                    <a href="#" class="tool-link">Vezi tool</a>
+                </div>
             </div>
         </div>
 
-        <!-- Daily Posting Tools -->
-        <section id="daily" class="daily-tools">
-            <h2 class="section-title"><span>📅 Tool-uri pentru Postări Zilnice</span></h2>
-            <p style="text-align: center; color: #64748b; margin-bottom: 2rem;">Automatizează-ți postările și menține consistența</p>
-            
-            <div class="tools-grid">
-                <div class="tool-card">
-                    <div class="tool-icon">📱</div>
-                    <h3>Buffer</h3>
-                    <p>Programează postări pentru toate platformele simultan. Ideal pentru consistență zilnică.</p>
-                    <div class="tool-meta">
-                        <span class="tool-type">Programare</span>
-                        <a href="#" class="tool-link">Gratuit →</a>
-                    </div>
-                </div>
-                
-                <div class="tool-card">
-                    <div class="tool-icon">⚡</div>
-                    <h3>Later</h3>
-                    <p>Specializat pe Instagram și TikTok. Calendar vizual și auto-postare.</p>
-                    <div class="tool-meta">
-                        <span class="tool-type">Social Media</span>
-                        <a href="#" class="tool-link">Începe →</a>
-                    </div>
-                </div>
-                
-                <div class="tool-card">
-                    <div class="tool-icon">🤖</div>
-                    <h3>Hootsuite</h3>
-                    <p>Management complet pentru toate conturile. Analytics și programare în avans.</p>
-                    <div class="tool-meta">
-                        <span class="tool-type">Enterprise</span>
-                        <a href="#" class="tool-link">Vezi oferte →</a>
-                    </div>
-                </div>
-                
-                <div class="tool-card">
-                    <div class="tool-icon">📊</div>
-                    <h3>Planoly</h3>
-                    <p>Planifică vizual grid-ul de Instagram. Ideal pentru estetică și branding.</p>
-                    <div class="tool-meta">
-                        <span class="tool-type">Design</span>
-                        <a href="#" class="tool-link">Încearcă →</a>
-                    </div>
-                </div>
-                
-                <div class="tool-card">
-                    <div class="tool-icon">🎨</div>
-                    <h3>Canva</h3>
-                    <p>Creează 30 de postări într-o oră cu șabloane automate.</p>
-                    <div class="tool-meta">
-                        <span class="tool-type">Design</span>
-                        <a href="#" class="tool-link">Începe →</a>
-                    </div>
-                </div>
-                
-                <div class="tool-card">
-                    <div class="tool-icon">✂️</div>
-                    <h3>CapCut</h3>
-                    <p>Editează video-uri rapid cu șabloane virale pentru TikTok și Reels.</p>
-                    <div class="tool-meta">
-                        <span class="tool-type">Video</span>
-                        <a href="#" class="tool-link">Gratuit →</a>
-                    </div>
-                </div>
+        <div class="premium-features">
+            <div class="feature">
+                <div class="feature-icon">🤖</div>
+                <h4>AI Powered</h4>
+                <p>Algoritmi inteligenți care învață audience-ul tău</p>
             </div>
-        </section>
-
-        <!-- Growth Tools -->
-        <section id="growth" class="growth-tools">
-            <h2 class="section-title"><span>🚀 Tool-uri pentru Creștere Explozivă</span></h2>
-            <p style="text-align: center; color: rgba(255,255,255,0.9); margin-bottom: 2rem;">Instrumente testate care au adus +1000 urmăritori în prima lună</p>
-            
-            <div class="growth-grid">
-                <div class="growth-card">
-                    <h3>📈 TubeBuddy</h3>
-                    <p>Optimizare YouTube - keywords, tags, și analiză competitivă.</p>
-                    <div class="growth-stats">
-                        <span>🏆 +200% views</span>
-                        <span>⭐ 4.8/5</span>
-                    </div>
-                    <a href="#" style="color: white;">Încearcă gratuit →</a>
-                </div>
-                
-                <div class="growth-card">
-                    <h3>🔍 VidIQ</h3>
-                    <p>Analiză video și trending topics pentru YouTube și TikTok.</p>
-                    <div class="growth-stats">
-                        <span>🏆 +150% subscribers</span>
-                        <span>⭐ 4.7/5</span>
-                    </div>
-                    <a href="#" style="color: white;">Vezi tool-ul →</a>
-                </div>
-                
-                <div class="growth-card">
-                    <h3>📊 SocialBlade</h3>
-                    <p>Analiză statistici și predicții de creștere pentru toate platformele.</p>
-                    <div class="growth-stats">
-                        <span>🏆 Analytics</span>
-                        <span>⭐ 4.6/5</span>
-                    </div>
-                    <a href="#" style="color: white;">Gratuit →</a>
-                </div>
-                
-                <div class="growth-card">
-                    <h3>🎯 TrendTok</h3>
-                    <p>Identifică trenduri înainte să devină virale pe TikTok.</p>
-                    <div class="growth-stats">
-                        <span>🏆 +300% engagement</span>
-                        <span>⭐ 4.9/5</span>
-                    </div>
-                    <a href="#" style="color: white;">Află mai multe →</a>
-                </div>
+            <div class="feature">
+                <div class="feature-icon">⚡</div>
+                <h4>În timp real</h4>
+                <p>Trenduri și analytics în timp real pentru toate platformele</p>
             </div>
-        </section>
-
-        <!-- Daily Checklist -->
-        <section id="checklist" class="checklist">
-            <h2 class="section-title"><span>✅ Checklist Zilnic pentru Creștere</span></h2>
-            <p style="text-align: center; color: #64748b; margin-bottom: 2rem;">Bifează zilnic pentru rezultate garantate</p>
-            
-            <div class="checklist-grid">
-                <div class="checklist-item">
-                    <div class="checklist-check">✓</div>
-                    <div class="checklist-content">
-                        <h4>Postare dimineață</h4>
-                        <p>8:00 - 10:00 e intervalul optim</p>
-                    </div>
-                </div>
-                
-                <div class="checklist-item">
-                    <div class="checklist-check">✓</div>
-                    <div class="checklist-content">
-                        <h4>Story</h4>
-                        <p>Minim 3 story-uri interactive</p>
-                    </div>
-                </div>
-                
-                <div class="checklist-item">
-                    <div class="checklist-check">✓</div>
-                    <div class="checklist-content">
-                        <h4>Engagement</h4>
-                        <p>Răspunde la toate comentariile</p>
-                    </div>
-                </div>
-                
-                <div class="checklist-item">
-                    <div class="checklist-check">✓</div>
-                    <div class="checklist-content">
-                        <h4>Trend check</h4>
-                        <p>Caută 3 trenduri noi</p>
-                    </div>
-                </div>
-                
-                <div class="checklist-item">
-                    <div class="checklist-check">✓</div>
-                    <div class="checklist-content">
-                        <h4>Analytics</h4>
-                        <p>Verifică statisticile zilnice</p>
-                    </div>
-                </div>
-                
-                <div class="checklist-item">
-                    <div class="checklist-check">✓</div>
-                    <div class="checklist-content">
-                        <h4>Colaborări</h4>
-                        <p>Interacționează cu 5 creatori</p>
-                    </div>
-                </div>
+            <div class="feature">
+                <div class="feature-icon">🔒</div>
+                <h4>Premium & Safe</h4>
+                <p>Tool-uri verificate și sigure pentru conturile tale</p>
             </div>
-        </section>
+        </div>
 
-        <!-- CTA Section -->
-        <section class="cta">
-            <h2>Vrei să primești checklist-ul zilnic pe email?</h2>
-            <p>Înscrie-te și primești zilnic task-uri personalizate pentru creștere</p>
-            <form style="max-width: 500px; margin: 2rem auto; display: flex; gap: 1rem;">
-                <input type="email" placeholder="Email-ul tău" style="flex: 1; padding: 1rem; border: none; border-radius: 50px;" required>
-                <button type="submit" class="cta-button" style="padding: 1rem 2rem;">Abonează-te</button>
+        <h2 class="section-title">Planuri <span>Premium</span></h2>
+        
+        <div class="pricing">
+            <div class="pricing-card">
+                <h3>Creator</h3>
+                <div class="pricing-price">$29 <span>/lună</span></div>
+                <ul class="pricing-features">
+                    <li>✓ 2 platforme la alegere</li>
+                    <li>✓ Programări nelimitate</li>
+                    <li>✓ Analytics de bază</li>
+                    <li>✓ Suport email</li>
+                    <li>✗ AI recommendations</li>
+                    <li>✗ Trend detection</li>
+                </ul>
+                <a href="#" class="pricing-button">Începe acum</a>
+            </div>
+            
+            <div class="pricing-card popular">
+                <div class="popular-badge">Cel mai popular</div>
+                <h3>Premium Pro</h3>
+                <div class="pricing-price">$79 <span>/lună</span></div>
+                <ul class="pricing-features">
+                    <li>✓ Toate 4 platformele</li>
+                    <li>✓ Programări nelimitate</li>
+                    <li>✓ Analytics avansat</li>
+                    <li>✓ AI recommendations</li>
+                    <li>✓ Trend detection</li>
+                    <li>✓ Suport prioritar 24/7</li>
+                </ul>
+                <a href="#" class="pricing-button">Începe perioada gratuită</a>
+            </div>
+        </div>
+
+        <div class="newsletter">
+            <h2>Primește <span class="premium-gradient">strategii exclusive</span> săptămânal</h2>
+            <p>Newsletter-ul premium cu cele mai noi tactici pentru cele 4 platforme</p>
+            <form class="newsletter-form">
+                <input type="email" placeholder="Email-ul tău">
+                <button type="submit">Abonează-te gratuit</button>
             </form>
-        </section>
+        </div>
     </div>
 
     <footer>
         <div class="footer-content">
             <div class="footer-section">
-                <h4>Creator Hub Growth</h4>
-                <p>Tool-uri și resurse pentru creatori de conținut care vor să crească rapid și sustenabil.</p>
+                <h4>Creator Hub Premium</h4>
+                <p>Tool-ul all-in-one pentru creatorii care vor să domine Facebook, YouTube, Instagram și TikTok.</p>
             </div>
             <div class="footer-section">
-                <h4>Tool-uri</h4>
+                <h4>Platforme</h4>
                 <ul>
-                    <li><a href="#">Postări Zilnice</a></li>
-                    <li><a href="#">Creștere</a></li>
-                    <li><a href="#">Analytics</a></li>
-                    <li><a href="#">Trenduri</a></li>
+                    <li><a href="#">Facebook Tools</a></li>
+                    <li><a href="#">YouTube Tools</a></li>
+                    <li><a href="#">Instagram Tools</a></li>
+                    <li><a href="#">TikTok Tools</a></li>
                 </ul>
             </div>
             <div class="footer-section">
                 <h4>Resurse</h4>
                 <ul>
-                    <li><a href="#">Blog</a></li>
-                    <li><a href="#">Checklist</a></li>
-                    <li><a href="#">Ghiduri</a></li>
-                    <li><a href="#">Webinarii</a></li>
+                    <li><a href="#">Blog Premium</a></li>
+                    <li><a href="#">Ghiduri Platforme</a></li>
+                    <li><a href="#">Webinarii Live</a></li>
+                    <li><a href="#">Comunitate</a></li>
                 </ul>
             </div>
             <div class="footer-section">
-                <h4>Social</h4>
+                <h4>Legal</h4>
                 <ul>
-                    <li><a href="#">TikTok</a></li>
-                    <li><a href="#">Instagram</a></li>
-                    <li><a href="#">YouTube</a></li>
-                    <li><a href="#">Twitter</a></li>
+                    <li><a href="#">Termeni și condiții</a></li>
+                    <li><a href="#">Politică confidențialitate</a></li>
+                    <li><a href="#">Securitate</a></li>
                 </ul>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>© 2024 Creator Hub Growth. Construit pentru creatori, de creatori.</p>
+            <p>© 2024 Creator Hub Premium. Toate drepturile rezervate.</p>
         </div>
     </footer>
 </body>
