@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Creator Hub 2026 · Next Gen Creator OS</title>
+    <title>Creator Hub 2026 · 3 Simple Plans</title>
     <style>
         * {
             margin: 0;
@@ -30,30 +30,27 @@
             border-radius: 100px;
         }
 
-        /* Glassmorphism + Neumorphism fusion */
+        /* Glassmorphism */
         .glass {
             background: rgba(20, 22, 36, 0.7);
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
             border: 1px solid rgba(110, 86, 207, 0.2);
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
         }
 
-        /* Navigation - 2026 floating style */
+        /* Navigation */
         nav {
             position: fixed;
             top: 24px;
             left: 50%;
             transform: translateX(-50%);
             width: 90%;
-            max-width: 1400px;
-            padding: 16px 32px;
+            max-width: 1200px;
+            padding: 14px 28px;
             border-radius: 100px;
             background: rgba(8, 10, 18, 0.8);
             backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
             border: 1px solid rgba(108, 92, 231, 0.3);
-            box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.5);
             z-index: 1000;
             display: flex;
             justify-content: space-between;
@@ -61,29 +58,26 @@
         }
 
         .logo {
-            font-size: 1.6rem;
+            font-size: 1.5rem;
             font-weight: 700;
-            letter-spacing: -0.02em;
-            background: linear-gradient(135deg, #a0a8ff, #c084fc, #ff92ae);
+            background: linear-gradient(135deg, #a0a8ff, #c084fc);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            background-clip: text;
         }
 
         .logo span {
             background: linear-gradient(135deg, #ffd166, #ff92ae);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            font-size: 0.9rem;
-            font-weight: 600;
+            font-size: 0.85rem;
             margin-left: 4px;
             border-left: 2px solid rgba(255,255,255,0.1);
-            padding-left: 12px;
+            padding-left: 10px;
         }
 
         .nav-links {
             display: flex;
-            gap: 40px;
+            gap: 30px;
             align-items: center;
         }
 
@@ -91,206 +85,120 @@
             color: #a0a8c0;
             text-decoration: none;
             font-weight: 500;
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             transition: 0.2s;
-            display: flex;
-            align-items: center;
-            gap: 8px;
         }
 
         .nav-links a:hover {
             color: #fff;
-            text-shadow: 0 0 10px rgba(108, 92, 231, 0.5);
         }
 
         .premium-chip {
             background: linear-gradient(135deg, #6c5ce7, #a463f5);
-            padding: 8px 20px;
+            padding: 6px 16px;
             border-radius: 100px;
             color: white;
             font-weight: 600;
-            font-size: 0.85rem;
-            letter-spacing: 0.5px;
-            box-shadow: 0 10px 20px -5px rgba(108, 92, 231, 0.4);
+            font-size: 0.8rem;
         }
 
-        /* Hero Section - 2026 vibe */
+        /* Hero Section */
         .hero {
-            min-height: 100vh;
+            min-height: 80vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
-            padding: 120px 24px 80px;
+            padding: 100px 24px 60px;
             background: radial-gradient(circle at 30% 30%, rgba(108, 92, 231, 0.15), transparent 50%),
-                        radial-gradient(circle at 80% 70%, rgba(255, 146, 174, 0.15), transparent 50%),
                         #03050c;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" opacity="0.05"><path d="M100 0 L200 100 L100 200 L0 100 Z" fill="white"/></svg>') repeat;
-            opacity: 0.03;
-            pointer-events: none;
         }
 
         .hero h1 {
-            font-size: clamp(3rem, 8vw, 6rem);
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
             font-weight: 800;
-            line-height: 1.1;
-            max-width: 1100px;
-            margin: 0 auto 24px;
-            background: linear-gradient(135deg, #ffffff, #c0b7ff, #a0a8ff);
+            max-width: 900px;
+            margin: 0 auto 20px;
+            background: linear-gradient(135deg, #ffffff, #c0b7ff);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            background-clip: text;
-            letter-spacing: -0.02em;
-        }
-
-        .hero h1 .outline {
-            -webkit-text-stroke: 2px rgba(255,255,255,0.3);
-            -webkit-text-fill-color: transparent;
-            background: none;
         }
 
         .hero p {
-            font-size: 1.3rem;
+            font-size: 1.2rem;
             max-width: 600px;
-            margin: 0 auto 40px;
+            margin: 0 auto 30px;
             color: #a0a8c0;
         }
 
-        /* 2026 platform icons - super modern */
-        .platform-fleet {
+        /* Platform Icons Row - smaller */
+        .platform-row {
             display: flex;
             justify-content: center;
-            gap: 30px;
-            margin: 50px 0;
+            gap: 20px;
+            margin: 30px 0;
             flex-wrap: wrap;
         }
 
-        .platform-icon-2026 {
-            width: 90px;
-            height: 90px;
-            border-radius: 30px;
+        .platform-icon-sm {
+            width: 60px;
+            height: 60px;
+            border-radius: 20px;
             background: rgba(20, 22, 36, 0.8);
-            backdrop-filter: blur(10px);
             border: 1px solid rgba(108, 92, 231, 0.3);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 2.8rem;
+            font-size: 2rem;
             transition: 0.3s;
-            box-shadow: 0 20px 30px -15px black;
-            position: relative;
         }
 
-        .platform-icon-2026::after {
-            content: '';
-            position: absolute;
-            inset: -2px;
-            border-radius: 32px;
-            background: linear-gradient(135deg, #6c5ce7, transparent, #ff92ae);
-            opacity: 0;
-            transition: 0.3s;
-            z-index: -1;
+        .platform-icon-sm:hover {
+            transform: translateY(-5px);
+            border-color: #6c5ce7;
         }
 
-        .platform-icon-2026:hover {
-            transform: translateY(-10px) scale(1.05);
-            border-color: transparent;
-        }
+        .icon-meta { background: linear-gradient(135deg, #1877f2, #00b2ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: 900; }
+        .icon-yt { background: linear-gradient(135deg, #ff0000, #ff6b6b); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .icon-ig { background: linear-gradient(135deg, #fccc63, #e4405f, #833ab4); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .icon-tt { background: linear-gradient(135deg, #00f2ea, #ff0050); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
 
-        .platform-icon-2026:hover::after {
-            opacity: 0.7;
-        }
-
-        /* modern icons - 2026 style (using text but looks like newest icons) */
-        .icon-meta {
-            background: linear-gradient(135deg, #1877f2, #00b2ff);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            font-weight: 900;
-            font-size: 2.2rem;
-        }
-        .icon-yt {
-            background: linear-gradient(135deg, #ff0000, #ff6b6b);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        .icon-ig {
-            background: linear-gradient(135deg, #fccc63, #e4405f, #833ab4);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        .icon-tt {
-            background: linear-gradient(135deg, #00f2ea, #ff0050);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .cta-button-2026 {
+        .cta-button {
             background: linear-gradient(135deg, #6c5ce7, #a463f5);
             color: white;
             border: none;
-            padding: 18px 48px;
+            padding: 14px 40px;
             border-radius: 60px;
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             font-weight: 600;
-            letter-spacing: 0.5px;
             cursor: pointer;
             transition: 0.3s;
             box-shadow: 0 20px 30px -10px #6c5ce7;
             text-decoration: none;
             display: inline-block;
-            position: relative;
-            overflow: hidden;
         }
 
-        .cta-button-2026::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
-            transition: 0.5s;
-        }
-
-        .cta-button-2026:hover::before {
-            left: 100%;
-        }
-
-        .cta-button-2026:hover {
+        .cta-button:hover {
             transform: scale(1.05);
-            box-shadow: 0 30px 40px -10px #8a7cf0;
         }
 
-        /* stats with modern look */
-        .stats-grid {
+        /* Stats row - smaller */
+        .stats-row {
             display: flex;
             justify-content: center;
-            gap: 60px;
-            margin: 80px 0 40px;
+            gap: 40px;
+            margin: 50px 0 20px;
             flex-wrap: wrap;
         }
 
-        .stat-block {
+        .stat-item {
             text-align: center;
         }
 
         .stat-number {
-            font-size: 3rem;
-            font-weight: 800;
+            font-size: 2.2rem;
+            font-weight: 700;
             background: linear-gradient(135deg, #fff, #c0b7ff);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -299,25 +207,23 @@
 
         .stat-label {
             color: #a0a8c0;
-            text-transform: uppercase;
-            letter-spacing: 2px;
             font-size: 0.8rem;
-            margin-top: 8px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
-        /* main container */
+        /* Main container */
         .container {
-            max-width: 1400px;
+            max-width: 1200px;
             margin: 0 auto;
-            padding: 80px 24px;
+            padding: 60px 24px;
         }
 
         .section-title {
             text-align: center;
-            font-size: 3.2rem;
+            font-size: 2.5rem;
             font-weight: 700;
-            letter-spacing: -0.02em;
-            margin-bottom: 60px;
+            margin-bottom: 40px;
         }
 
         .section-title span {
@@ -326,390 +232,338 @@
             -webkit-text-fill-color: transparent;
         }
 
-        /* platform cards 2026 */
-        .platform-cards {
+        /* Tools Grid - smaller cards */
+        .tools-grid-compact {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
+            grid-template-columns: repeat(3, 1fr);
             gap: 20px;
-            margin: 40px 0 80px;
+            margin: 40px 0;
         }
 
-        .platform-card {
-            background: rgba(20, 22, 36, 0.5);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(108, 92, 231, 0.2);
-            border-radius: 40px;
-            padding: 30px;
-            transition: 0.3s;
-            text-align: center;
-        }
-
-        .platform-card:hover {
-            border-color: #6c5ce7;
-            transform: translateY(-5px);
-            background: rgba(30, 32, 50, 0.8);
-        }
-
-        .platform-card .big-icon {
-            font-size: 3.5rem;
-            margin-bottom: 20px;
-        }
-
-        .platform-card h3 {
-            font-size: 1.8rem;
-            margin-bottom: 12px;
-            background: linear-gradient(135deg, #fff, #bdbdbd);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .platform-card p {
-            color: #9198b0;
-            font-size: 0.95rem;
-        }
-
-        /* tools grid - ultra modern */
-        .tools-grid-2026 {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
-            gap: 24px;
-            margin: 60px 0;
-        }
-
-        .tool-card-2026 {
+        .tool-card-compact {
             background: rgba(18, 20, 30, 0.7);
             backdrop-filter: blur(16px);
             border: 1px solid rgba(108, 92, 231, 0.2);
-            border-radius: 40px;
-            padding: 32px;
-            transition: 0.25s all cubic-bezier(0.2, 0, 0, 1);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .tool-card-2026::before {
-            content: '';
-            position: absolute;
-            top: -2px;
-            left: -2px;
-            right: -2px;
-            bottom: -2px;
-            background: linear-gradient(135deg, #6c5ce7, #ff92ae, #6c5ce7);
-            border-radius: 42px;
-            opacity: 0;
+            border-radius: 24px;
+            padding: 24px;
             transition: 0.3s;
-            z-index: -2;
         }
 
-        .tool-card-2026:hover::before {
-            opacity: 0.15;
-        }
-
-        .tool-card-2026:hover {
-            border-color: transparent;
-            transform: scale(1.02);
+        .tool-card-compact:hover {
+            border-color: #6c5ce7;
+            transform: translateY(-3px);
             background: rgba(28, 31, 48, 0.8);
         }
 
-        .tool-platform-icons {
+        .tool-platform-mini {
             display: flex;
-            gap: 10px;
-            margin-bottom: 24px;
+            gap: 8px;
+            margin-bottom: 16px;
         }
 
-        .mini-platform-icon {
-            width: 40px;
-            height: 40px;
+        .mini-icon {
+            width: 32px;
+            height: 32px;
             background: rgba(255,255,255,0.03);
-            border-radius: 14px;
+            border-radius: 10px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.4rem;
+            font-size: 1.2rem;
             border: 1px solid rgba(255,255,255,0.05);
         }
 
-        .tool-card-2026 h3 {
-            font-size: 2rem;
+        .tool-card-compact h3 {
+            font-size: 1.4rem;
             font-weight: 600;
-            margin-bottom: 16px;
+            margin-bottom: 8px;
             background: linear-gradient(135deg, #fff, #d0d0ff);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
-        .tool-desc {
+        .tool-desc-compact {
             color: #9ca3bc;
-            margin-bottom: 24px;
-            line-height: 1.6;
+            font-size: 0.9rem;
+            margin-bottom: 16px;
+            line-height: 1.5;
         }
 
-        .feature-tags {
+        .tag-row {
             display: flex;
             flex-wrap: wrap;
-            gap: 10px;
-            margin-bottom: 28px;
+            gap: 6px;
+            margin-bottom: 16px;
         }
 
-        .feature-tag {
+        .mini-tag {
             background: rgba(108, 92, 231, 0.15);
             border: 1px solid rgba(108, 92, 231, 0.3);
             color: #c1b3ff;
-            padding: 6px 16px;
-            border-radius: 40px;
-            font-size: 0.8rem;
-            font-weight: 500;
-            letter-spacing: 0.3px;
+            padding: 4px 10px;
+            border-radius: 30px;
+            font-size: 0.7rem;
         }
 
-        .tool-footer-2026 {
+        .tool-footer-compact {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-top: 20px;
+            margin-top: 12px;
         }
 
-        .price-2026 {
-            font-size: 2.2rem;
+        .price-compact {
+            font-size: 1.6rem;
             font-weight: 700;
             background: linear-gradient(135deg, #ffd166, #ff92ae);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
-        .price-2026 span {
-            font-size: 1rem;
+        .price-compact span {
+            font-size: 0.8rem;
             color: #6b7280;
-            background: none;
             -webkit-text-fill-color: #6b7280;
         }
 
-        .tool-link-2026 {
+        .tool-link-compact {
             background: rgba(255,255,255,0.03);
             border: 1px solid rgba(255,255,255,0.1);
             color: white;
-            padding: 12px 28px;
-            border-radius: 40px;
+            padding: 8px 16px;
+            border-radius: 30px;
             text-decoration: none;
-            font-weight: 500;
+            font-size: 0.9rem;
             transition: 0.2s;
         }
 
-        .tool-link-2026:hover {
+        .tool-link-compact:hover {
             background: #6c5ce7;
-            border-color: #6c5ce7;
         }
 
-        /* AI features section */
-        .ai-features {
+        /* Pricing Section - 3 plans, all platforms included */
+        .pricing-3-col {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 24px;
-            margin: 80px 0;
+            gap: 20px;
+            margin: 40px 0;
         }
 
-        .ai-card {
-            background: rgba(15, 17, 26, 0.6);
-            border: 1px solid rgba(255,255,255,0.03);
-            border-radius: 32px;
-            padding: 32px;
-            text-align: center;
-            backdrop-filter: blur(8px);
-        }
-
-        .ai-icon {
-            font-size: 3rem;
-            margin-bottom: 24px;
-        }
-
-        .ai-card h4 {
-            font-size: 1.6rem;
-            margin-bottom: 16px;
-        }
-
-        .ai-card p {
-            color: #9ca3bc;
-        }
-
-        /* pricing 2026 */
-        .pricing-2026 {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 30px;
-            margin: 60px 0;
-        }
-
-        .pricing-card-2026 {
+        .pricing-card-compact {
             background: rgba(20, 22, 36, 0.7);
             backdrop-filter: blur(20px);
             border: 1px solid rgba(108, 92, 231, 0.2);
-            border-radius: 48px;
-            padding: 48px 40px;
+            border-radius: 32px;
+            padding: 32px 24px;
             position: relative;
+            transition: 0.3s;
         }
 
-        .pricing-card-2026.popular {
+        .pricing-card-compact:hover {
+            border-color: #6c5ce7;
+            transform: translateY(-4px);
+        }
+
+        .pricing-card-compact.popular {
             background: rgba(30, 25, 50, 0.9);
             border-color: #6c5ce7;
-            box-shadow: 0 30px 50px -20px #6c5ce7;
+            box-shadow: 0 20px 40px -15px #6c5ce7;
         }
 
-        .popular-chip {
+        .popular-badge-small {
             position: absolute;
-            top: -15px;
+            top: -12px;
             left: 50%;
             transform: translateX(-50%);
             background: linear-gradient(135deg, #ffd166, #ff92ae);
             color: #000;
             font-weight: 700;
-            padding: 8px 30px;
+            padding: 4px 20px;
             border-radius: 40px;
-            font-size: 0.9rem;
+            font-size: 0.8rem;
+            white-space: nowrap;
         }
 
-        .pricing-card-2026 h3 {
-            font-size: 2.2rem;
-            margin-bottom: 20px;
+        .pricing-card-compact h3 {
+            font-size: 1.6rem;
+            margin-bottom: 8px;
+            text-align: center;
         }
 
-        .pricing-price-2026 {
-            font-size: 4rem;
+        .platforms-included {
+            text-align: center;
+            color: #6c5ce7;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 16px;
+        }
+
+        .platforms-included span {
+            background: rgba(108, 92, 231, 0.2);
+            padding: 4px 10px;
+            border-radius: 40px;
+        }
+
+        .price-large {
+            font-size: 2.8rem;
             font-weight: 800;
-            margin: 30px 0;
+            text-align: center;
+            margin: 16px 0;
             background: linear-gradient(135deg, #fff, #a5b4fc);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
-        .pricing-price-2026 span {
-            font-size: 1.2rem;
+        .price-large span {
+            font-size: 1rem;
             color: #6b7280;
             -webkit-text-fill-color: #6b7280;
         }
 
-        .pricing-features-2026 {
+        .feature-list-compact {
             list-style: none;
-            margin: 30px 0;
+            margin: 24px 0;
         }
 
-        .pricing-features-2026 li {
+        .feature-list-compact li {
             color: #b9c1d9;
-            margin-bottom: 16px;
+            margin-bottom: 12px;
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 8px;
+            font-size: 0.95rem;
         }
 
-        .pricing-features-2026 li::before {
+        .feature-list-compact li::before {
             content: '✓';
             color: #6c5ce7;
             font-weight: 700;
-            font-size: 1.2rem;
         }
 
-        .pricing-button-2026 {
+        .pricing-btn-compact {
             display: block;
             background: linear-gradient(135deg, #6c5ce7, #a463f5);
             color: white;
             text-align: center;
-            padding: 18px;
-            border-radius: 60px;
+            padding: 14px;
+            border-radius: 50px;
             text-decoration: none;
             font-weight: 600;
+            font-size: 1rem;
             transition: 0.2s;
             border: none;
             width: 100%;
             cursor: pointer;
         }
 
-        .pricing-button-2026:hover {
+        .pricing-btn-compact:hover {
             transform: scale(1.02);
-            box-shadow: 0 20px 30px -10px #6c5ce7;
+            box-shadow: 0 10px 20px -5px #6c5ce7;
         }
 
-        /* newsletter modern */
-        .newsletter-2026 {
-            background: linear-gradient(145deg, #141624, #1c1f30);
-            border-radius: 80px;
-            padding: 80px 40px;
+        /* AI Features - smaller */
+        .ai-row {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin: 50px 0;
+        }
+
+        .ai-card-compact {
+            background: rgba(15, 17, 26, 0.6);
+            border: 1px solid rgba(255,255,255,0.03);
+            border-radius: 24px;
+            padding: 24px;
             text-align: center;
-            margin: 80px 0;
-            border: 1px solid rgba(108, 92, 231, 0.2);
         }
 
-        .newsletter-2026 h2 {
-            font-size: 3rem;
-            margin-bottom: 20px;
+        .ai-icon-small {
+            font-size: 2.2rem;
+            margin-bottom: 12px;
         }
 
-        .newsletter-2026 p {
-            color: #a0a8c0;
-            margin-bottom: 40px;
+        .ai-card-compact h4 {
             font-size: 1.2rem;
+            margin-bottom: 8px;
         }
 
-        .newsletter-form-2026 {
-            max-width: 600px;
+        .ai-card-compact p {
+            color: #9ca3bc;
+            font-size: 0.9rem;
+        }
+
+        /* Newsletter - compact */
+        .newsletter-compact {
+            background: linear-gradient(145deg, #141624, #1c1f30);
+            border-radius: 48px;
+            padding: 48px 32px;
+            text-align: center;
+            margin: 50px 0;
+        }
+
+        .newsletter-compact h2 {
+            font-size: 2.2rem;
+            margin-bottom: 12px;
+        }
+
+        .newsletter-compact p {
+            color: #a0a8c0;
+            margin-bottom: 24px;
+        }
+
+        .form-compact {
+            max-width: 500px;
             margin: 0 auto;
             display: flex;
-            gap: 16px;
+            gap: 12px;
         }
 
-        .newsletter-form-2026 input {
+        .form-compact input {
             flex: 1;
-            padding: 18px 28px;
+            padding: 14px 20px;
             background: rgba(0,0,0,0.3);
             border: 1px solid rgba(108, 92, 231, 0.3);
-            border-radius: 60px;
+            border-radius: 50px;
             color: white;
-            font-size: 1rem;
         }
 
-        .newsletter-form-2026 input:focus {
-            outline: none;
-            border-color: #6c5ce7;
-        }
-
-        .newsletter-form-2026 button {
-            padding: 18px 40px;
+        .form-compact button {
+            padding: 14px 28px;
             background: linear-gradient(135deg, #6c5ce7, #a463f5);
             border: none;
-            border-radius: 60px;
+            border-radius: 50px;
             color: white;
             font-weight: 600;
             cursor: pointer;
-            transition: 0.2s;
         }
 
-        .newsletter-form-2026 button:hover {
-            transform: scale(1.05);
-        }
-
-        /* footer 2026 */
+        /* Footer - compact */
         footer {
             background: #080a12;
             border-top: 1px solid rgba(108, 92, 231, 0.2);
-            padding: 60px 24px 30px;
+            padding: 40px 24px 20px;
         }
 
-        .footer-grid {
-            max-width: 1400px;
+        .footer-grid-compact {
+            max-width: 1200px;
             margin: 0 auto;
             display: grid;
-            grid-template-columns: 2fr repeat(3, 1fr);
-            gap: 60px;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
         }
 
         .footer-col p {
             color: #9198b0;
-            margin: 20px 0;
-            line-height: 1.7;
+            font-size: 0.9rem;
+            margin: 16px 0;
         }
 
         .footer-col h4 {
             color: white;
-            margin-bottom: 24px;
-            font-size: 1.2rem;
+            margin-bottom: 16px;
+            font-size: 1rem;
         }
 
         .footer-col ul {
@@ -717,52 +571,58 @@
         }
 
         .footer-col ul li {
-            margin-bottom: 16px;
+            margin-bottom: 10px;
         }
 
         .footer-col ul li a {
             color: #9198b0;
             text-decoration: none;
-            transition: 0.2s;
-        }
-
-        .footer-col ul li a:hover {
-            color: #6c5ce7;
+            font-size: 0.9rem;
         }
 
         .footer-bottom {
-            max-width: 1400px;
-            margin: 40px auto 0;
-            padding-top: 30px;
+            max-width: 1200px;
+            margin: 30px auto 0;
+            padding-top: 20px;
             border-top: 1px solid rgba(255,255,255,0.05);
             text-align: center;
             color: #5f677a;
+            font-size: 0.85rem;
         }
 
+        /* Responsive */
         @media (max-width: 900px) {
-            .platform-cards {
+            .tools-grid-compact {
                 grid-template-columns: repeat(2, 1fr);
             }
-            .ai-features {
+            .pricing-3-col {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .ai-row {
                 grid-template-columns: 1fr;
             }
-            .pricing-2026 {
+            .footer-grid-compact {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .tools-grid-compact {
                 grid-template-columns: 1fr;
             }
-            .footer-grid {
+            .pricing-3-col {
+                grid-template-columns: 1fr;
+            }
+            .footer-grid-compact {
                 grid-template-columns: 1fr;
             }
             nav {
                 flex-direction: column;
-                gap: 16px;
-                border-radius: 40px;
-                width: 95%;
-                padding: 16px;
+                gap: 12px;
+                border-radius: 30px;
             }
             .nav-links {
-                flex-wrap: wrap;
-                justify-content: center;
-                gap: 20px;
+                gap: 16px;
             }
         }
     </style>
@@ -771,269 +631,197 @@
     <nav>
         <div class="logo">CREATOR HUB <span>2026</span></div>
         <div class="nav-links">
-            <a href="#platforms">🎯 Platforms</a>
-            <a href="#tools">⚡ Tools</a>
-            <a href="#pricing">💎 Pricing</a>
-            <a href="#ai">🧠 AI Suite</a>
-            <div class="premium-chip">PREMIUM 1.0</div>
+            <a href="#tools">Tools</a>
+            <a href="#pricing">Pricing</a>
+            <a href="#ai">AI</a>
+            <div class="premium-chip">ALL PLATFORMS</div>
         </div>
     </nav>
 
     <section class="hero">
-        <h1>THE <span class="outline">OPERATING</span><br>SYSTEM FOR <span>CREATORS</span></h1>
-        <p>One unified platform to dominate Facebook, YouTube, Instagram & TikTok — powered by AI.</p>
+        <h1>One OS. Four Platforms.<br>Infinite Growth.</h1>
+        <p>Facebook · YouTube · Instagram · TikTok — all included in every plan.</p>
         
-        <div class="platform-fleet">
-            <div class="platform-icon-2026"><span class="icon-meta">M</span></div>
-            <div class="platform-icon-2026"><span class="icon-yt">▶</span></div>
-            <div class="platform-icon-2026"><span class="icon-ig">◉</span></div>
-            <div class="platform-icon-2026"><span class="icon-tt">♬</span></div>
+        <div class="platform-row">
+            <div class="platform-icon-sm"><span class="icon-meta">M</span></div>
+            <div class="platform-icon-sm"><span class="icon-yt">▶</span></div>
+            <div class="platform-icon-sm"><span class="icon-ig">◉</span></div>
+            <div class="platform-icon-sm"><span class="icon-tt">♬</span></div>
         </div>
 
-        <a href="#" class="cta-button-2026">✨ Start 14-day free trial</a>
+        <a href="#" class="cta-button">Start 14-day free trial →</a>
 
-        <div class="stats-grid">
-            <div class="stat-block">
+        <div class="stats-row">
+            <div class="stat-item">
                 <div class="stat-number">850K+</div>
-                <div class="stat-label">Active creators</div>
+                <div class="stat-label">CREATORS</div>
             </div>
-            <div class="stat-block">
+            <div class="stat-item">
                 <div class="stat-number">4</div>
-                <div class="stat-label">Platforms</div>
+                <div class="stat-label">PLATFORMS</div>
             </div>
-            <div class="stat-block">
+            <div class="stat-item">
                 <div class="stat-number">312%</div>
-                <div class="stat-label">Avg. growth</div>
+                <div class="stat-label">AVG GROWTH</div>
             </div>
         </div>
     </section>
 
     <div class="container">
-        <!-- platform quick cards -->
-        <div class="platform-cards" id="platforms">
-            <div class="platform-card">
-                <div class="big-icon"><span class="icon-meta" style="font-size:3rem;">M</span></div>
-                <h3>Meta/Facebook</h3>
-                <p>Reach 2.9B+ monthly active users with AI-optimized campaigns.</p>
-            </div>
-            <div class="platform-card">
-                <div class="big-icon"><span class="icon-yt" style="font-size:3rem;">▶</span></div>
-                <h3>YouTube</h3>
-                <p>Maximize views & subs with predictive video SEO.</p>
-            </div>
-            <div class="platform-card">
-                <div class="big-icon"><span class="icon-ig" style="font-size:3rem;">◉</span></div>
-                <h3>Instagram</h3>
-                <p>Reels, stories & feed — unified scheduling & analytics.</p>
-            </div>
-            <div class="platform-card">
-                <div class="big-icon"><span class="icon-tt" style="font-size:3rem;">♬</span></div>
-                <h3>TikTok</h3>
-                <p>Ride trends before they blow up with real-time detection.</p>
-            </div>
-        </div>
-
-        <h2 class="section-title">NEXT-GEN <span>TOOL SUITE</span></h2>
-
-        <div class="tools-grid-2026" id="tools">
-            <!-- Meta Tool -->
-            <div class="tool-card-2026">
-                <div class="tool-platform-icons">
-                    <div class="mini-platform-icon"><span class="icon-meta">M</span></div>
-                    <div class="mini-platform-icon"><span class="icon-ig">◉</span></div>
+        <!-- Tools Section - 3 cards only -->
+        <h2 class="section-title" id="tools">ESSENTIAL <span>TOOLS</span></h2>
+        <div class="tools-grid-compact">
+            <div class="tool-card-compact">
+                <div class="tool-platform-mini">
+                    <div class="mini-icon"><span class="icon-meta">M</span></div>
+                    <div class="mini-icon"><span class="icon-ig">◉</span></div>
                 </div>
-                <h3>MetaHub AI</h3>
-                <p class="tool-desc">Unified command center for Facebook & Instagram. AI-powered posting, audience prediction, and ad optimization.</p>
-                <div class="feature-tags">
-                    <span class="feature-tag">AI scheduler</span>
-                    <span class="feature-tag">audience intelligence</span>
-                    <span class="feature-tag">A/B testing</span>
+                <h3>Content Studio</h3>
+                <p class="tool-desc-compact">Create, schedule & optimize posts across all platforms with AI assistance.</p>
+                <div class="tag-row">
+                    <span class="mini-tag">AI captions</span>
+                    <span class="mini-tag">smart schedule</span>
                 </div>
-                <div class="tool-footer-2026">
-                    <div class="price-2026">$39<span>/mo</span></div>
-                    <a href="#" class="tool-link-2026">→ Explore</a>
+                <div class="tool-footer-compact">
+                    <div class="price-compact">$29<span>/mo</span></div>
+                    <a href="#" class="tool-link-compact">Learn more</a>
                 </div>
             </div>
 
-            <!-- YouTube Tool -->
-            <div class="tool-card-2026">
-                <div class="tool-platform-icons">
-                    <div class="mini-platform-icon"><span class="icon-yt">▶</span></div>
-                    <div class="mini-platform-icon"><span class="icon-tt">♬</span></div>
+            <div class="tool-card-compact">
+                <div class="tool-platform-mini">
+                    <div class="mini-icon"><span class="icon-yt">▶</span></div>
+                    <div class="mini-icon"><span class="icon-tt">♬</span></div>
                 </div>
-                <h3>ViralVision</h3>
-                <p class="tool-desc">YouTube + TikTok trend predictor. Get alerts on rising sounds, topics & editing styles before they explode.</p>
-                <div class="feature-tags">
-                    <span class="feature-tag">trend radar</span>
-                    <span class="feature-tag">keyword miner</span>
-                    <span class="feature-tag">thumbnail scorer</span>
+                <h3>Trend Predictor</h3>
+                <p class="tool-desc-compact">Real-time trend detection for YouTube & TikTok with 48h early alerts.</p>
+                <div class="tag-row">
+                    <span class="mini-tag">trend radar</span>
+                    <span class="mini-tag">viral score</span>
                 </div>
-                <div class="tool-footer-2026">
-                    <div class="price-2026">$59<span>/mo</span></div>
-                    <a href="#" class="tool-link-2026">→ Explore</a>
+                <div class="tool-footer-compact">
+                    <div class="price-compact">$49<span>/mo</span></div>
+                    <a href="#" class="tool-link-compact">Learn more</a>
                 </div>
             </div>
 
-            <!-- Instagram Tool -->
-            <div class="tool-card-2026">
-                <div class="tool-platform-icons">
-                    <div class="mini-platform-icon"><span class="icon-ig">◉</span></div>
-                    <div class="mini-platform-icon"><span class="icon-meta">M</span></div>
-                </div>
-                <h3>InstaFlow</h3>
-                <p class="tool-desc"> aesthetic grid planner + AI hashtag generator + best-time-to-post engine for maximum engagement.</p>
-                <div class="feature-tags">
-                    <span class="feature-tag">visual planner</span>
-                    <span class="feature-tag">hashtag AI</span>
-                    <span class="feature-tag">story templates</span>
-                </div>
-                <div class="tool-footer-2026">
-                    <div class="price-2026">$49<span>/mo</span></div>
-                    <a href="#" class="tool-link-2026">→ Explore</a>
-                </div>
-            </div>
-
-            <!-- TikTok Tool -->
-            <div class="tool-card-2026">
-                <div class="tool-platform-icons">
-                    <div class="mini-platform-icon"><span class="icon-tt">♬</span></div>
-                    <div class="mini-platform-icon"><span class="icon-yt">▶</span></div>
-                </div>
-                <h3>TikTok Pulse</h3>
-                <p class="tool-desc">Real-time trend detection, sound analytics, and viral template library used by top 1% creators.</p>
-                <div class="feature-tags">
-                    <span class="feature-tag">sound scout</span>
-                    <span class="feature-tag">template lab</span>
-                    <span class="feature-tag">viral score</span>
-                </div>
-                <div class="tool-footer-2026">
-                    <div class="price-2026">$69<span>/mo</span></div>
-                    <a href="#" class="tool-link-2026">→ Explore</a>
-                </div>
-            </div>
-
-            <!-- Cross-platform AI -->
-            <div class="tool-card-2026">
-                <div class="tool-platform-icons">
-                    <div class="mini-platform-icon">🧠</div>
-                    <div class="mini-platform-icon">🌐</div>
-                </div>
-                <h3>CreatorOS</h3>
-                <p class="tool-desc">The all-in-one AI agent that manages your entire content empire across all 4 platforms simultaneously.</p>
-                <div class="feature-tags">
-                    <span class="feature-tag">cross-post AI</span>
-                    <span class="feature-tag">unified inbox</span>
-                    <span class="feature-tag">content repurpose</span>
-                </div>
-                <div class="tool-footer-2026">
-                    <div class="price-2026">$129<span>/mo</span></div>
-                    <a href="#" class="tool-link-2026">→ Explore</a>
-                </div>
-            </div>
-
-            <!-- Analytics Hub -->
-            <div class="tool-card-2026">
-                <div class="tool-platform-icons">
-                    <div class="mini-platform-icon">📊</div>
-                    <div class="mini-platform-icon">📈</div>
+            <div class="tool-card-compact">
+                <div class="tool-platform-mini">
+                    <div class="mini-icon">📊</div>
+                    <div class="mini-icon">📈</div>
                 </div>
                 <h3>Analytics 360</h3>
-                <p class="tool-desc">Unified cross-platform analytics with predictive growth modeling and competitor benchmarking.</p>
-                <div class="feature-tags">
-                    <span class="feature-tag">funnel insights</span>
-                    <span class="feature-tag">competitor spy</span>
-                    <span class="feature-tag">ROI tracker</span>
+                <p class="tool-desc-compact">Unified cross-platform analytics with growth predictions & competitor insights.</p>
+                <div class="tag-row">
+                    <span class="mini-tag">unified dashboard</span>
+                    <span class="mini-tag">ROI tracker</span>
                 </div>
-                <div class="tool-footer-2026">
-                    <div class="price-2026">$79<span>/mo</span></div>
-                    <a href="#" class="tool-link-2026">→ Explore</a>
+                <div class="tool-footer-compact">
+                    <div class="price-compact">$39<span>/mo</span></div>
+                    <a href="#" class="tool-link-compact">Learn more</a>
                 </div>
             </div>
         </div>
 
-        <!-- AI Features 2026 -->
-        <div class="ai-features" id="ai">
-            <div class="ai-card">
-                <div class="ai-icon">🧠</div>
-                <h4>Content AI</h4>
-                <p>Generates platform-optimized captions, hashtags, and even video scripts in seconds.</p>
-            </div>
-            <div class="ai-card">
-                <div class="ai-icon">⚡</div>
-                <h4>Trend Predictor</h4>
-                <p>Our 2026 algorithm predicts viral trends with 94% accuracy up to 48h in advance.</p>
-            </div>
-            <div class="ai-card">
-                <div class="ai-icon">🎯</div>
-                <h4>Audience Twin</h4>
-                <p>Digital twin of your audience for safe experimentation & content testing.</p>
-            </div>
-        </div>
-
-        <!-- Pricing 2026 -->
-        <h2 class="section-title">PRICING <span>2026</span></h2>
-        <div class="pricing-2026" id="pricing">
-            <div class="pricing-card-2026">
-                <h3>Creator</h3>
-                <div class="pricing-price-2026">$29<span>/mo</span></div>
-                <ul class="pricing-features-2026">
-                    <li>2 platforms of choice</li>
-                    <li>Unlimited scheduling</li>
+        <!-- Pricing Section - 3 plans, all platforms included -->
+        <h2 class="section-title" id="pricing">SIMPLE <span>PRICING</span></h2>
+        <p style="text-align: center; color: #a0a8c0; margin-bottom: 30px;">All plans include Facebook, YouTube, Instagram & TikTok</p>
+        
+        <div class="pricing-3-col">
+            <div class="pricing-card-compact">
+                <h3>Starter</h3>
+                <div class="platforms-included"><span>4 platforms</span></div>
+                <div class="price-large">$19<span>/mo</span></div>
+                <ul class="feature-list-compact">
+                    <li>Unified scheduling</li>
                     <li>Basic analytics</li>
-                    <li>AI captions</li>
+                    <li>AI caption generator</li>
                     <li>Email support</li>
                 </ul>
-                <a href="#" class="pricing-button-2026">Start free trial</a>
+                <a href="#" class="pricing-btn-compact">Start free trial</a>
             </div>
-            <div class="pricing-card-2026 popular">
-                <div class="popular-chip">⭐️ MOST POPULAR</div>
-                <h3>Premium Pro</h3>
-                <div class="pricing-price-2026">$79<span>/mo</span></div>
-                <ul class="pricing-features-2026">
-                    <li>All 4 platforms</li>
+
+            <div class="pricing-card-compact popular">
+                <div class="popular-badge-small">🔥 MOST POPULAR</div>
+                <h3>Pro</h3>
+                <div class="platforms-included"><span>4 platforms</span></div>
+                <div class="price-large">$49<span>/mo</span></div>
+                <ul class="feature-list-compact">
+                    <li>Everything in Starter</li>
                     <li>Trend predictor AI</li>
                     <li>Advanced analytics</li>
-                    <li>Unified inbox</li>
-                    <li>24/7 priority support</li>
                     <li>Content repurposing</li>
+                    <li>Priority support</li>
                 </ul>
-                <a href="#" class="pricing-button-2026">Start free trial</a>
+                <a href="#" class="pricing-btn-compact">Start free trial</a>
+            </div>
+
+            <div class="pricing-card-compact">
+                <h3>Business</h3>
+                <div class="platforms-included"><span>4 platforms</span></div>
+                <div class="price-large">$99<span>/mo</span></div>
+                <ul class="feature-list-compact">
+                    <li>Everything in Pro</li>
+                    <li>Team collaboration</li>
+                    <li>API access</li>
+                    <li>Custom reporting</li>
+                    <li>24/7 phone support</li>
+                </ul>
+                <a href="#" class="pricing-btn-compact">Start free trial</a>
             </div>
         </div>
 
-        <!-- Newsletter 2026 -->
-        <div class="newsletter-2026">
-            <h2>Join the <span style="background:linear-gradient(135deg,#ffd166,#ff92ae);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">2026</span> creator movement</h2>
-            <p>Weekly strategies, early access to tools & AI updates.</p>
-            <form class="newsletter-form-2026">
+        <!-- AI Features Row - 3 items -->
+        <div class="ai-row" id="ai">
+            <div class="ai-card-compact">
+                <div class="ai-icon-small">🧠</div>
+                <h4>Content AI</h4>
+                <p>Generates platform-optimized captions & scripts in seconds.</p>
+            </div>
+            <div class="ai-card-compact">
+                <div class="ai-icon-small">⚡</div>
+                <h4>Trend Predictor</h4>
+                <p>94% accuracy in predicting viral trends 48h in advance.</p>
+            </div>
+            <div class="ai-card-compact">
+                <div class="ai-icon-small">🎯</div>
+                <h4>Audience Twin</h4>
+                <p>Test content on a digital twin of your audience.</p>
+            </div>
+        </div>
+
+        <!-- Newsletter -->
+        <div class="newsletter-compact">
+            <h2>Join <span style="background:linear-gradient(135deg,#ffd166,#ff92ae);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">850K+</span> creators</h2>
+            <p>Weekly strategies & early access to new features</p>
+            <form class="form-compact">
                 <input type="email" placeholder="your@email.com">
-                <button type="submit">Subscribe →</button>
+                <button type="submit">Subscribe</button>
             </form>
         </div>
     </div>
 
     <footer>
-        <div class="footer-grid">
+        <div class="footer-grid-compact">
             <div class="footer-col">
-                <div class="logo" style="font-size:2rem;">CREATOR HUB</div>
-                <p>The first unified operating system for modern creators. Trusted by 850k+ content professionals.</p>
+                <div class="logo" style="font-size:1.8rem;">CREATOR HUB</div>
+                <p>The unified operating system for modern creators. All platforms, one subscription.</p>
             </div>
             <div class="footer-col">
                 <h4>Platforms</h4>
                 <ul>
-                    <li><a href="#">Facebook Tools</a></li>
-                    <li><a href="#">YouTube Tools</a></li>
-                    <li><a href="#">Instagram Tools</a></li>
-                    <li><a href="#">TikTok Tools</a></li>
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="#">YouTube</a></li>
+                    <li><a href="#">Instagram</a></li>
+                    <li><a href="#">TikTok</a></li>
                 </ul>
             </div>
             <div class="footer-col">
                 <h4>Company</h4>
                 <ul>
                     <li><a href="#">About</a></li>
-                    <li><a href="#">Careers</a></li>
                     <li><a href="#">Blog</a></li>
-                    <li><a href="#">Press</a></li>
+                    <li><a href="#">Careers</a></li>
                 </ul>
             </div>
             <div class="footer-col">
@@ -1041,12 +829,11 @@
                 <ul>
                     <li><a href="#">Terms</a></li>
                     <li><a href="#">Privacy</a></li>
-                    <li><a href="#">Security</a></li>
                 </ul>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>© 2026 Creator Hub. Next Gen Creator OS. All rights reserved.</p>
+            © 2026 Creator Hub. All platforms included in every plan.
         </div>
     </footer>
 </body>
