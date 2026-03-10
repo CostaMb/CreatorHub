@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creator Hub - Scule pentru Creatori</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: white;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+        
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        p {
+            font-size: 1.2rem;
+            margin-bottom: 3rem;
+            opacity: 0.95;
+        }
+        
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .card {
+            background: white;
+            color: #333;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            transition: transform 0.3s;
+        }
+        
+        .card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .card h3 {
+            color: #667eea;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+        
+        .card p {
+            color: #666;
+            margin-bottom: 1.5rem;
+            font-size: 1rem;
+        }
+        
+        .badge {
+            display: inline-block;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        
+        .badge.video {
+            background: #e3f2fd;
+            color: #1976d2;
+        }
+        
+        .badge.design {
+            background: #f3e5f5;
+            color: #7b1fa2;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-decoration: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 5px;
+            transition: opacity 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn:hover {
+            opacity: 0.9;
+        }
+        
+        footer {
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.2);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📱 Creator Hub</h1>
+        <p>Scule esențiale pentru creatori de conținut</p>
+        
+        <div class="tools-grid">
+            <div class="card">
+                <h3>Adobe Premiere Pro</h3>
+                <span class="badge video">Video</span>
+                <p>Software profesional de editare video</p>
+                <a href="#" class="btn">Detalii</a>
+            </div>
+            
+            <div class="card">
+                <h3>Canva</h3>
+                <span class="badge design">Design</span>
+                <p>Design pentru thumbnail-uri și grafice</p>
+                <a href="#" class="btn">Detalii</a>
+            </div>
+            
+            <div class="card">
+                <h3>Audacity</h3>
+                <span class="badge design" style="background:#fff3e0; color:#f57c00;">Audio</span>
+                <p>Editare audio gratuită</p>
+                <a href="#" class="btn">Detalii</a>
+            </div>
+            
+            <div class="card">
+                <h3>TubeBuddy</h3>
+                <span class="badge design" style="background:#e8f5e8; color:#2e7d32;">Analytics</span>
+                <p>Optimizare pentru YouTube</p>
+                <a href="#" class="btn">Detalii</a>
+            </div>
+        </div>
+        
+        <footer>
+            <p>&copy; 2024 Creator Hub. Toate drepturile rezervate.</p>
+        </footer>
+    </div>
+</body>
+</html>
