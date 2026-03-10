@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Creator Hub 2026 · 3 Simple Plans</title>
+    <title>Creator Hub 2026 · Starting at £2</title>
     <style>
         * {
             margin: 0;
@@ -121,6 +121,12 @@
             max-width: 900px;
             margin: 0 auto 20px;
             background: linear-gradient(135deg, #ffffff, #c0b7ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero h1 .price-highlight {
+            background: linear-gradient(135deg, #ffd166, #ff92ae);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
@@ -341,7 +347,7 @@
             background: #6c5ce7;
         }
 
-        /* Pricing Section - 3 plans, all platforms included */
+        /* Pricing Section - 3 plans with £ pricing */
         .pricing-3-col {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -420,6 +426,12 @@
             font-size: 1rem;
             color: #6b7280;
             -webkit-text-fill-color: #6b7280;
+        }
+
+        /* Specific styling for £ prices */
+        .price-large .currency {
+            font-size: 1.8rem;
+            vertical-align: super;
         }
 
         .feature-list-compact {
@@ -634,12 +646,12 @@
             <a href="#tools">Tools</a>
             <a href="#pricing">Pricing</a>
             <a href="#ai">AI</a>
-            <div class="premium-chip">ALL PLATFORMS</div>
+            <div class="premium-chip">FROM £2</div>
         </div>
     </nav>
 
     <section class="hero">
-        <h1>One OS. Four Platforms.<br>Infinite Growth.</h1>
+        <h1>One OS. Four Platforms.<br>Starting at <span class="price-highlight">£2</span></h1>
         <p>Facebook · YouTube · Instagram · TikTok — all included in every plan.</p>
         
         <div class="platform-row">
@@ -683,7 +695,7 @@
                     <span class="mini-tag">smart schedule</span>
                 </div>
                 <div class="tool-footer-compact">
-                    <div class="price-compact">$29<span>/mo</span></div>
+                    <div class="price-compact">£2<span>/mo</span></div>
                     <a href="#" class="tool-link-compact">Learn more</a>
                 </div>
             </div>
@@ -700,7 +712,7 @@
                     <span class="mini-tag">viral score</span>
                 </div>
                 <div class="tool-footer-compact">
-                    <div class="price-compact">$49<span>/mo</span></div>
+                    <div class="price-compact">£5<span>/mo</span></div>
                     <a href="#" class="tool-link-compact">Learn more</a>
                 </div>
             </div>
@@ -717,13 +729,13 @@
                     <span class="mini-tag">ROI tracker</span>
                 </div>
                 <div class="tool-footer-compact">
-                    <div class="price-compact">$39<span>/mo</span></div>
+                    <div class="price-compact">£8<span>/mo</span></div>
                     <a href="#" class="tool-link-compact">Learn more</a>
                 </div>
             </div>
         </div>
 
-        <!-- Pricing Section - 3 plans, all platforms included -->
+        <!-- Pricing Section - 3 plans, all platforms included, in £ -->
         <h2 class="section-title" id="pricing">SIMPLE <span>PRICING</span></h2>
         <p style="text-align: center; color: #a0a8c0; margin-bottom: 30px;">All plans include Facebook, YouTube, Instagram & TikTok</p>
         
@@ -731,7 +743,7 @@
             <div class="pricing-card-compact">
                 <h3>Starter</h3>
                 <div class="platforms-included"><span>4 platforms</span></div>
-                <div class="price-large">$19<span>/mo</span></div>
+                <div class="price-large"><span class="currency">£</span>2<span>/mo</span></div>
                 <ul class="feature-list-compact">
                     <li>Unified scheduling</li>
                     <li>Basic analytics</li>
@@ -745,7 +757,7 @@
                 <div class="popular-badge-small">🔥 MOST POPULAR</div>
                 <h3>Pro</h3>
                 <div class="platforms-included"><span>4 platforms</span></div>
-                <div class="price-large">$49<span>/mo</span></div>
+                <div class="price-large"><span class="currency">£</span>5<span>/mo</span></div>
                 <ul class="feature-list-compact">
                     <li>Everything in Starter</li>
                     <li>Trend predictor AI</li>
@@ -759,10 +771,10 @@
             <div class="pricing-card-compact">
                 <h3>Business</h3>
                 <div class="platforms-included"><span>4 platforms</span></div>
-                <div class="price-large">$99<span>/mo</span></div>
+                <div class="price-large"><span class="currency">£</span>8<span>/mo</span></div>
                 <ul class="feature-list-compact">
                     <li>Everything in Pro</li>
-                    <li>Team collaboration</li>
+                    <li>Team collaboration (5 seats)</li>
                     <li>API access</li>
                     <li>Custom reporting</li>
                     <li>24/7 phone support</li>
@@ -805,7 +817,7 @@
         <div class="footer-grid-compact">
             <div class="footer-col">
                 <div class="logo" style="font-size:1.8rem;">CREATOR HUB</div>
-                <p>The unified operating system for modern creators. All platforms, one subscription.</p>
+                <p>The unified operating system for modern creators. All platforms, one subscription. Starting at just £2.</p>
             </div>
             <div class="footer-col">
                 <h4>Platforms</h4>
@@ -833,7 +845,7 @@
             </div>
         </div>
         <div class="footer-bottom">
-            © 2026 Creator Hub. All platforms included in every plan.
+            © 2026 Creator Hub. Plans start at £2, £5, and £8. All platforms included.
         </div>
     </footer>
 </body>
